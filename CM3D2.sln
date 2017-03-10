@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CM3D2.UnityGuiTranslation.Plugin", "CM3D2.UnityGuiTranslation.Plugin\CM3D2.UnityGuiTranslation.Plugin.csproj", "{8E6B6C70-1D14-4A05-8C12-529328C1006F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CM3D2.ModPacker", "CM3D2.ModPacker\CM3D2.ModPacker.csproj", "{370CD616-8806-43EE-A8C0-5C0BB60BF7BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8E6B6C70-1D14-4A05-8C12-529328C1006F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E6B6C70-1D14-4A05-8C12-529328C1006F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E6B6C70-1D14-4A05-8C12-529328C1006F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8E6B6C70-1D14-4A05-8C12-529328C1006F}.Debug|x86.Build.0 = Debug|Any CPU
+		{8E6B6C70-1D14-4A05-8C12-529328C1006F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E6B6C70-1D14-4A05-8C12-529328C1006F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E6B6C70-1D14-4A05-8C12-529328C1006F}.Release|x86.ActiveCfg = Release|Any CPU
+		{8E6B6C70-1D14-4A05-8C12-529328C1006F}.Release|x86.Build.0 = Release|Any CPU
+		{370CD616-8806-43EE-A8C0-5C0BB60BF7BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{370CD616-8806-43EE-A8C0-5C0BB60BF7BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{370CD616-8806-43EE-A8C0-5C0BB60BF7BE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{370CD616-8806-43EE-A8C0-5C0BB60BF7BE}.Debug|x86.Build.0 = Debug|Any CPU
+		{370CD616-8806-43EE-A8C0-5C0BB60BF7BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{370CD616-8806-43EE-A8C0-5C0BB60BF7BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{370CD616-8806-43EE-A8C0-5C0BB60BF7BE}.Release|x86.ActiveCfg = Release|Any CPU
+		{370CD616-8806-43EE-A8C0-5C0BB60BF7BE}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

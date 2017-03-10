@@ -1,0 +1,10 @@
+﻿<Application x:Class="CM3D2.ModPacker.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:CM3D2.ModPacker"
+             xmlns:cs="clr-namespace:System.Collections;assembly=mscorlib"
+             StartupUri="ModPackerWindow.xaml">
+    <Application.Resources>
+        <local:FileItems x:Key="FileItems"/>
+    </Application.Resources>
+</Application>

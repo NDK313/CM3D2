@@ -1,0 +1,762 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>CM3D2.Toolkit</name>
+  </assembly>
+  <members>
+    <member name="T:CM3D2.Toolkit.Deflate">
+      <summary>
+                Contains Methods to Compress and Decompress data in the DEFLATE Specification
+                <para />
+                See <a href="https://tools.ietf.org/html/rfc1951" target="_blank">RFC 1951</a></summary>
+    </member>
+    <member name="M:CM3D2.Toolkit.Deflate.Compress(System.Byte[])">
+      <summary>
+                Compresses Data
+            </summary>
+      <param name="input">Data to be Compressed</param>
+      <returns>Compressed Data</returns>
+    </member>
+    <member name="M:CM3D2.Toolkit.Deflate.Decompress(System.Byte[])">
+      <summary>
+                Decompresses Data
+            </summary>
+      <param name="input">Data to be Decompressed</param>
+      <returns>Decompressed Data</returns>
+    </member>
+    <member name="T:CM3D2.Toolkit.Arc.ArcFileSystem">
+      <summary>
+                Arc File System Class
+                <para></para>
+                Provides Methods and Functions to Handle Loading, Creating, Modifying and Saving of KISS's CM3D2 .arc Files
+            </summary>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.#ctor">
+      <summary>
+                Creates a new Empty Instance of an Arc File System
+            </summary>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.#ctor(System.String)">
+      <summary>
+                Creates a new Empty Instance of an Arc File System named <paramref name="name" /></summary>
+      <param name="name">File System Name</param>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.CleanFileName(System.String)">
+      <summary>
+                Removes invalid characters from the given File Name
+                <para />
+                See <see cref="M:System.IO.Path.GetInvalidFileNameChars" /></summary>
+      <param name="input">File Name</param>
+      <returns>File Name without invalid characters</returns>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.Clear">
+      <summary>
+                Clears the <see cref="P:CM3D2.Toolkit.Arc.ArcFileSystem.Root" /> Directory
+            </summary>
+      <returns>True if Sucessful</returns>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.Clear(CM3D2.Toolkit.Arc.Entry.ArcDirectoryEntry)">
+      <summary>
+                Clears a Directory
+            </summary>
+      <param name="entry">Directory to Clear</param>
+      <returns>True if Successful</returns>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.ArcFileSystem.CompressList">
+      <summary>
+                List of Extensions that will be Compressed upon saving
+            </summary>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.Copy(CM3D2.Toolkit.Arc.Entry.ArcDirectoryEntry,CM3D2.Toolkit.Arc.Entry.ArcDirectoryEntry)">
+      <summary>
+                Creates a copy of <paramref name="source" /> inside <paramref name="target " /></summary>
+      <param name="source">Source Directory</param>
+      <param name="target">Target Directory</param>
+      <returns>True if Successful</returns>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.Copy(CM3D2.Toolkit.Arc.Entry.ArcFileEntry,CM3D2.Toolkit.Arc.Entry.ArcDirectoryEntry)">
+      <summary>
+                Creates a copy of <paramref name="source" /> inside <paramref name="target " /></summary>
+      <param name="source">Source File</param>
+      <param name="target">Target Directory</param>
+      <returns>True if Successful</returns>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.CreateDirectory(System.String)">
+      <summary>
+                Creates a Directory with the specified name inside <see cref="P:CM3D2.Toolkit.Arc.ArcFileSystem.Root" /></summary>
+      <param name="name">Directory Name</param>
+      <returns>The created Directory</returns>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.CreateDirectory(System.String,CM3D2.Toolkit.Arc.Entry.ArcDirectoryEntry)">
+      <summary>
+                Creates a Directory with the specified name inside <paramref name="parent" /></summary>
+      <param name="name">Directory Name</param>
+      <param name="parent">Parent Directory</param>
+      <returns>The created Directory</returns>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.CreateFile(System.String)">
+      <summary>
+                Creates a File with the specified name inside <see cref="P:CM3D2.Toolkit.Arc.ArcFileSystem.Root" /></summary>
+      <param name="name">File Name</param>
+      <returns>The created File</returns>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.CreateFile(System.String,CM3D2.Toolkit.Arc.Entry.ArcDirectoryEntry)">
+      <summary>
+                Creates a File with the specified name inside <paramref name="parent" /></summary>
+      <param name="name">File Name</param>
+      <param name="parent">Parent Directory</param>
+      <returns>The created File</returns>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.Delete(CM3D2.Toolkit.Arc.Entry.ArcDirectoryEntry,System.Boolean)">
+      <summary>
+                Deletes a Directory
+            </summary>
+      <param name="entry">Directory to Delete</param>
+      <param name="recursive">True to Delete Files and Subdirectories</param>
+      <returns>True if Successful</returns>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.Delete(CM3D2.Toolkit.Arc.Entry.ArcFileEntry)">
+      <summary>
+                Deletes a File
+            </summary>
+      <param name="entry">File to Delete</param>
+      <returns>True if Successful</returns>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.DetectMagic(System.String)">
+      <summary>
+                Detects if the ARC Magic Identifier is present the specified file
+            </summary>
+      <param name="file">File to Check</param>
+      <returns>True if ARC Magic ID detected</returns>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.ArcFileSystem.Directories">
+      <summary>
+                Listing of all Directories
+            </summary>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.DirectoryExists(System.String)">
+      <summary>
+                Checks if a Directory Exists inside of <see cref="P:CM3D2.Toolkit.Arc.ArcFileSystem.Root" /></summary>
+      <param name="name">Directory Name</param>
+      <returns>True if Exists</returns>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.DirectoryExists(System.String,CM3D2.Toolkit.Arc.Entry.ArcDirectoryEntry)">
+      <summary>
+                Checks if a Directory Exists inside of <paramref name="parent" /></summary>
+      <param name="name">Directory Name</param>
+      <param name="parent">Parent Directory</param>
+      <returns>True if Exists</returns>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.FileExists(System.String)">
+      <summary>
+                Checks if a File Exists inside of <see cref="P:CM3D2.Toolkit.Arc.ArcFileSystem.Root" /></summary>
+      <param name="name">File Name</param>
+      <returns>True if Exists</returns>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.FileExists(System.String,CM3D2.Toolkit.Arc.Entry.ArcDirectoryEntry)">
+      <summary>
+                Checks if a File Exists inside of <paramref name="parent" /></summary>
+      <param name="name">File Name</param>
+      <param name="parent">Parent Directory</param>
+      <returns>True if Exists</returns>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.ArcFileSystem.Files">
+      <summary>
+                Listing of all Files
+            </summary>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.GetDirectory(System.String)">
+      <summary>
+                Finds a Existing Directory inside <see cref="P:CM3D2.Toolkit.Arc.ArcFileSystem.Root" /></summary>
+      <param name="name">Directory Name</param>
+      <returns>The Directory or null if none found</returns>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.GetDirectory(System.String,CM3D2.Toolkit.Arc.Entry.ArcDirectoryEntry)">
+      <summary>
+                Finds a Existing Directory inside <paramref name="parent" /></summary>
+      <param name="name">Directory Name</param>
+      <param name="parent">Parent Directory</param>
+      <returns>The Directory or null if none found</returns>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.GetFile(System.String)">
+      <summary>
+                Finds a Existing File inside <see cref="P:CM3D2.Toolkit.Arc.ArcFileSystem.Root" /></summary>
+      <param name="name">File Name</param>
+      <returns>The Directory or null if none found</returns>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.GetFile(System.String,CM3D2.Toolkit.Arc.Entry.ArcDirectoryEntry)">
+      <summary>
+                Finds a Existing File inside <paramref name="parent" /></summary>
+      <param name="name">File Name</param>
+      <param name="parent">Parent Directory</param>
+      <returns>The Directory or null if none found</returns>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.HasEntry(CM3D2.Toolkit.Arc.Entry.ArcEntryBase)">
+      <summary>
+                Checks if an Arc Entry is part of this File System
+            </summary>
+      <param name="a">Entry A</param>
+      <returns>True if Same FileSystem</returns>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.LoadArc(System.String)">
+      <summary>
+                Loads an Arc File into <see cref="P:CM3D2.Toolkit.Arc.ArcFileSystem.Root" /></summary>
+      <param name="arcFile">Arc File Path</param>
+      <returns>True if Successful</returns>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.LoadArc(System.String,CM3D2.Toolkit.Arc.Entry.ArcDirectoryEntry)">
+      <summary>
+                Loads an Arc File in this Instance into <paramref name="parentDir" /></summary>
+      <param name="arcFile">Arc File Path</param>
+      <param name="parentDir">Parent Directory</param>
+      <returns>True if Successful</returns>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.LoadDirectory(System.String)">
+      <summary>
+                Loads a Directory and its all files recursively into <see cref="P:CM3D2.Toolkit.Arc.ArcFileSystem.Root" /></summary>
+      <param name="path">File Path</param>
+      <returns>True if Successful</returns>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.LoadDirectory(System.String,CM3D2.Toolkit.Arc.Entry.ArcDirectoryEntry)">
+      <summary>
+                Loads a Directory and all its files recursively into <paramref name="parentDir" /></summary>
+      <param name="path">File Path</param>
+      <param name="parentDir">Parent Directory</param>
+      <returns>True if Successful</returns>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.LoadFile(System.String)">
+      <summary>
+                Loads a Single File into <see cref="P:CM3D2.Toolkit.Arc.ArcFileSystem.Root" /></summary>
+      <param name="path">File Path</param>
+      <returns>True if Successful</returns>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.LoadFile(System.String,CM3D2.Toolkit.Arc.Entry.ArcDirectoryEntry)">
+      <summary>
+                Loads a Single File into <paramref name="parentDir" /></summary>
+      <param name="path">File Path</param>
+      <param name="parentDir">Parent Directory</param>
+      <returns>True if Successful</returns>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.ArcFileSystem.Logger">
+      <summary>
+                Instance Logger (Defaults to <see cref="F:CM3D2.Toolkit.Logging.NullLogger.Instance" />)
+            </summary>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.MergeCopy(CM3D2.Toolkit.Arc.Entry.ArcDirectoryEntry,CM3D2.Toolkit.Arc.Entry.ArcDirectoryEntry)">
+      <summary>
+                Merges a Copy of <paramref name="sourceDir" /> with <paramref name="targetDir" /></summary>
+      <param name="sourceDir">Source Directory</param>
+      <param name="targetDir">Target Directory</param>
+      <returns>True if Successful</returns>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.MergeMove(CM3D2.Toolkit.Arc.Entry.ArcDirectoryEntry,CM3D2.Toolkit.Arc.Entry.ArcDirectoryEntry)">
+      <summary>
+                Merges <paramref name="sourceDir" /> with <paramref name="targetDir" /></summary>
+      <param name="sourceDir">Source Directory</param>
+      <param name="targetDir">Target Directory</param>
+      <returns>True if Successful</returns>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.Move(CM3D2.Toolkit.Arc.Entry.ArcDirectoryEntry,CM3D2.Toolkit.Arc.Entry.ArcDirectoryEntry)">
+      <summary>
+                Moves <parmref name="sourceDir" /> into <paramref name="targetDir" /></summary>
+      <param name="sourceDir">Source Directory</param>
+      <param name="targetDir">Target Directory</param>
+      <returns>True if Successful</returns>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.Move(CM3D2.Toolkit.Arc.Entry.ArcFileEntry,CM3D2.Toolkit.Arc.Entry.ArcDirectoryEntry)">
+      <summary>
+                Moves <parmref name="sourceFile" /> into <paramref name="targetDir" /></summary>
+      <param name="sourceFile">Source File</param>
+      <param name="targetDir">Target Directory</param>
+      <returns>True if Successful</returns>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.ArcFileSystem.Name">
+      <summary>
+                Internal Name of this .arc path
+            </summary>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.Rename(CM3D2.Toolkit.Arc.Entry.ArcEntryBase,System.String)">
+      <summary>
+                Renames a <see cref="T:CM3D2.Toolkit.Arc.Entry.ArcEntryBase" /></summary>
+      <param name="entry">Entry to Rename</param>
+      <param name="newName">New Name</param>
+      <returns>True</returns>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.ArcFileSystem.Root">
+      <summary>
+                File System Root
+            </summary>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.ArcFileSystem.Save(System.IO.Stream)">
+      <summary>
+                Writes this File System instance to the <see cref="T:System.IO.Stream" /> given by <paramref name="stream" /></summary>
+      <param name="stream">Stream</param>
+      <returns>True if Successful</returns>
+    </member>
+    <member name="T:CM3D2.Toolkit.Arc.Entry.ArcDirectoryEntry">
+      <summary>
+                Arc Directory Entry
+            </summary>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.Entry.ArcDirectoryEntry.Directories">
+      <summary>
+                List of Sub Directories
+            </summary>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.Entry.ArcDirectoryEntry.DirectoryCount">
+      <summary>
+                Directory Count
+            </summary>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.Entry.ArcDirectoryEntry.FileCount">
+      <summary>
+                File Count
+            </summary>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.Entry.ArcDirectoryEntry.Files">
+      <summary>
+                List of Files
+            </summary>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.Entry.ArcDirectoryEntry.IsRoot">
+      <summary>
+                Is the <see cref="P:CM3D2.Toolkit.Arc.ArcFileSystem.Root" /> of a <see cref="T:CM3D2.Toolkit.Arc.ArcFileSystem" /></summary>
+    </member>
+    <member name="T:CM3D2.Toolkit.Arc.Entry.ArcEntryBase">
+      <summary>
+                Base class for Arc File System Entries
+            </summary>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.Entry.ArcEntryBase.#ctor(CM3D2.Toolkit.Arc.ArcFileSystem)">
+      <summary>
+                Creates a new Entry, pertaining to <paramref name="fileSystem" /></summary>
+      <param name="fileSystem">File System</param>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.Entry.ArcEntryBase.Depth">
+      <summary>
+                Entry Depth in the <see cref="T:CM3D2.Toolkit.Arc.ArcFileSystem" /> Tree
+            </summary>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.Entry.ArcEntryBase.FileSystem">
+      <summary>
+        <see cref="T:CM3D2.Toolkit.Arc.ArcFileSystem" /> containing this Entry
+            </summary>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.Entry.ArcEntryBase.FullName">
+      <summary>
+                Full Name of this Entry (Parents and Self)
+            </summary>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.Entry.ArcEntryBase.Name">
+      <summary>
+                Name of this Entry
+            </summary>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.Entry.ArcEntryBase.Parent">
+      <summary>
+                Parent <see cref="T:CM3D2.Toolkit.Arc.Entry.ArcEntryBase" /> on the File System Tree
+            </summary>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.Entry.ArcEntryBase.ToString">
+      <summary>
+                Returns a string that represents the current object.
+            </summary>
+      <returns>
+                A string that represents the current object.
+            </returns>
+    </member>
+    <member name="T:CM3D2.Toolkit.Arc.Entry.ArcFileEntry">
+      <summary>
+                Arc File Entry
+            </summary>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.Entry.ArcFileEntry.Pointer">
+      <summary>
+                File Pointer, Contains File Size and Data
+            </summary>
+    </member>
+    <member name="T:CM3D2.Toolkit.Arc.FilePointer.ArcFilePointer">
+      <summary>
+                A Arc-File File Pointer
+                <para />
+                Holds a reference to a File inside an Arc File
+            </summary>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.FilePointer.ArcFilePointer.Compressed">
+      <summary>
+                File Data is Compressed
+                <para />
+                See <see cref="T:CM3D2.Toolkit.Deflate" />.
+            </summary>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.FilePointer.ArcFilePointer.Data">
+      <summary>
+                File Data
+            </summary>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.FilePointer.ArcFilePointer.Dispose">
+      <summary>
+                Disposes of Used Resources
+            </summary>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.FilePointer.ArcFilePointer.RawSize">
+      <summary>
+                Decompressed Size
+            </summary>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.FilePointer.ArcFilePointer.Size">
+      <summary>
+                Compressed Size
+            </summary>
+    </member>
+    <member name="T:CM3D2.Toolkit.Arc.FilePointer.FilePointerBase">
+      <summary>
+                Base Class for all File Pointers
+            </summary>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.FilePointer.FilePointerBase.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>CM3D2.Toolkit.Arc.FilePointer.FilePointerBase</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.FilePointer.FilePointerBase.Compress">
+      <summary>
+                Compresses this File Pointer
+            </summary>
+      <returns>A Compressed copy of this <see cref="T:CM3D2.Toolkit.Arc.FilePointer.FilePointerBase" /></returns>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.FilePointer.FilePointerBase.Compressed">
+      <summary>
+                File Data is Compressed
+                <para />
+                See <see cref="T:CM3D2.Toolkit.Deflate" />.
+            </summary>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.FilePointer.FilePointerBase.Data">
+      <summary>
+                File Data
+            </summary>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.FilePointer.FilePointerBase.Decompress">
+      <summary>
+                Decompresses this File Pointer
+            </summary>
+      <returns>A Decompressed copy of this <see cref="T:CM3D2.Toolkit.Arc.FilePointer.FilePointerBase" /></returns>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.FilePointer.FilePointerBase.Dispose">
+      <summary>
+                Disposes of Used Resources
+            </summary>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.FilePointer.FilePointerBase.RawSize">
+      <summary>
+                Decompressed Size
+            </summary>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.FilePointer.FilePointerBase.Size">
+      <summary>
+                Compressed Size
+            </summary>
+    </member>
+    <member name="T:CM3D2.Toolkit.Arc.FilePointer.MemoryFilePointer">
+      <summary>
+                A In-Memory File Pointer
+                <para />
+                Holds the Data for a File in Memory
+            </summary>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.FilePointer.MemoryFilePointer.#ctor(System.Byte[])">
+      <summary>
+                Creates a new Memory File Pointer from Uncompressed Data
+            </summary>
+      <param name="data">Uncompressed Data</param>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.FilePointer.MemoryFilePointer.#ctor(System.Byte[],System.Int32)">
+      <summary>
+                Creates a new Memory File Pointer from Compressed Data
+                <para />
+                See <see cref="T:CM3D2.Toolkit.Deflate" /></summary>
+      <param name="data">Compressed Data</param>
+      <param name="rawSize">Decompressed Size</param>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.FilePointer.MemoryFilePointer.Compressed">
+      <summary>
+                File Data is Compressed
+                <para />
+                See <see cref="T:CM3D2.Toolkit.Deflate" />.
+            </summary>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.FilePointer.MemoryFilePointer.Data">
+      <summary>
+                File Data
+            </summary>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.FilePointer.MemoryFilePointer.Dispose">
+      <summary>
+                Disposes of Used Resources
+            </summary>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.FilePointer.MemoryFilePointer.RawSize">
+      <summary>
+                Decompressed Size
+            </summary>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.FilePointer.MemoryFilePointer.Size">
+      <summary>
+                Compressed Size
+            </summary>
+    </member>
+    <member name="T:CM3D2.Toolkit.Arc.FilePointer.NullFilePointer">
+      <summary>
+                A Null, Zero-Byte File Pointer
+            </summary>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.FilePointer.NullFilePointer.Compress">
+      <summary>
+                Returns the corresponding <see cref="T:CM3D2.Toolkit.Arc.FilePointer.NullFilePointer" />, depending on <see cref="P:CM3D2.Toolkit.Arc.FilePointer.NullFilePointer.Compressed" /></summary>
+      <returns>
+        <see cref="F:CM3D2.Toolkit.Arc.FilePointer.NullFilePointer.CompressedPointer" /> or <see cref="F:CM3D2.Toolkit.Arc.FilePointer.NullFilePointer.UncompressedPointer" /></returns>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.FilePointer.NullFilePointer.Compressed">
+      <summary>
+                File Data is Compressed
+                <para />
+                See <see cref="T:CM3D2.Toolkit.Deflate" />.
+            </summary>
+    </member>
+    <member name="F:CM3D2.Toolkit.Arc.FilePointer.NullFilePointer.CompressedPointer">
+      <summary>
+                Static, Compressed-Tagged Null File Pointer
+            </summary>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.FilePointer.NullFilePointer.Data">
+      <summary>
+                File Data
+            </summary>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.FilePointer.NullFilePointer.Decompress">
+      <summary>
+                Returns the corresponding <see cref="T:CM3D2.Toolkit.Arc.FilePointer.NullFilePointer" />, depending on <see cref="P:CM3D2.Toolkit.Arc.FilePointer.NullFilePointer.Compressed" /></summary>
+      <returns>
+        <see cref="F:CM3D2.Toolkit.Arc.FilePointer.NullFilePointer.CompressedPointer" /> or <see cref="F:CM3D2.Toolkit.Arc.FilePointer.NullFilePointer.UncompressedPointer" /></returns>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.FilePointer.NullFilePointer.RawSize">
+      <summary>
+                Decompressed Size
+            </summary>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.FilePointer.NullFilePointer.Size">
+      <summary>
+                Compressed Size
+            </summary>
+    </member>
+    <member name="F:CM3D2.Toolkit.Arc.FilePointer.NullFilePointer.UncompressedPointer">
+      <summary>
+                Static, Uncompressed-Tagged Null File Pointer
+            </summary>
+    </member>
+    <member name="T:CM3D2.Toolkit.Arc.FilePointer.WindowsFilePointer">
+      <summary>
+                A Local Disk File Pointer
+                <para />
+                Holds a reference to a Local File on the Underlying Operating System
+            </summary>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.FilePointer.WindowsFilePointer.#ctor(System.String)">
+      <summary>
+                Creates a new Physical Disk File Pointer for the file given by <paramref name="filePath" /></summary>
+      <param name="filePath">File Path</param>
+      <exception cref="T:System.ArgumentException">
+                Thrown when the File given by <paramref name="filePath" /> exceeds 4,294,967,295 bytes (4GB)
+            </exception>
+      <exception cref="T:System.IO.FileNotFoundException">
+                Thrown when the File given by <paramref name="filePath" /> does not exist
+            </exception>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.FilePointer.WindowsFilePointer.Compressed">
+      <summary>
+                File Data is Compressed
+                <para />
+                See <see cref="T:CM3D2.Toolkit.Deflate" />.
+            </summary>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.FilePointer.WindowsFilePointer.Data">
+      <summary>
+                File Data
+            </summary>
+    </member>
+    <member name="M:CM3D2.Toolkit.Arc.FilePointer.WindowsFilePointer.Dispose">
+      <summary>
+                Disposes of Used Resources
+            </summary>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.FilePointer.WindowsFilePointer.RawSize">
+      <summary>
+                Decompressed Size
+            </summary>
+    </member>
+    <member name="P:CM3D2.Toolkit.Arc.FilePointer.WindowsFilePointer.Size">
+      <summary>
+                Compressed Size
+            </summary>
+    </member>
+    <member name="T:CM3D2.Toolkit.Logging.ILogger">
+      <summary>
+                Simple Logging Abstraction Layer
+            </summary>
+    </member>
+    <member name="M:CM3D2.Toolkit.Logging.ILogger.Debug(System.String,System.Object[])">
+      <summary>
+                Debug-Level Log Message
+            </summary>
+      <param name="message">Message</param>
+      <param name="args">Parameters</param>
+    </member>
+    <member name="M:CM3D2.Toolkit.Logging.ILogger.Error(System.String,System.Object[])">
+      <summary>
+                Error-Level Log Message
+            </summary>
+      <param name="message">Message</param>
+      <param name="args">Parameters</param>
+    </member>
+    <member name="M:CM3D2.Toolkit.Logging.ILogger.Fatal(System.String,System.Object[])">
+      <summary>
+                Fatal-Level Log Message
+            </summary>
+      <param name="message">Message</param>
+      <param name="args">Parameters</param>
+    </member>
+    <member name="M:CM3D2.Toolkit.Logging.ILogger.Info(System.String,System.Object[])">
+      <summary>
+                Info-Level Log Message
+            </summary>
+      <param name="message">Message</param>
+      <param name="args">Parameters</param>
+    </member>
+    <member name="P:CM3D2.Toolkit.Logging.ILogger.Name">
+      <summary>
+                Logger Name
+            </summary>
+    </member>
+    <member name="M:CM3D2.Toolkit.Logging.ILogger.Trace(System.String,System.Object[])">
+      <summary>
+                Trace-Level Log Message
+            </summary>
+      <param name="message">Message</param>
+      <param name="args">Parameters</param>
+    </member>
+    <member name="M:CM3D2.Toolkit.Logging.ILogger.Warn(System.String,System.Object[])">
+      <summary>
+                Warn-Level Log Message
+            </summary>
+      <param name="message">Message</param>
+      <param name="args">Parameters</param>
+    </member>
+    <member name="T:CM3D2.Toolkit.Logging.LogLevel">
+      <summary>
+                Log Level Enumerator
+            </summary>
+    </member>
+    <member name="F:CM3D2.Toolkit.Logging.LogLevel.Trace">
+      <summary>
+                Trace Level
+            </summary>
+    </member>
+    <member name="F:CM3D2.Toolkit.Logging.LogLevel.Debug">
+      <summary>
+                Debug Level
+            </summary>
+    </member>
+    <member name="F:CM3D2.Toolkit.Logging.LogLevel.Info">
+      <summary>
+                Information Level
+            </summary>
+    </member>
+    <member name="F:CM3D2.Toolkit.Logging.LogLevel.Warn">
+      <summary>
+                Warning Level
+            </summary>
+    </member>
+    <member name="F:CM3D2.Toolkit.Logging.LogLevel.Error">
+      <summary>
+                Error Level
+            </summary>
+    </member>
+    <member name="F:CM3D2.Toolkit.Logging.LogLevel.Fatal">
+      <summary>
+                Fatal Level
+            </summary>
+    </member>
+    <member name="F:CM3D2.Toolkit.Logging.LogLevel.Off">
+      <summary>
+                Off Level
+            </summary>
+    </member>
+    <member name="T:CM3D2.Toolkit.Logging.NullLogger">
+      <summary>
+                Null Logger
+            </summary>
+    </member>
+    <member name="M:CM3D2.Toolkit.Logging.NullLogger.Debug(System.String,System.Object[])">
+      <summary>
+                Debug-Level Log Message
+            </summary>
+      <param name="message">Message</param>
+      <param name="args">Parameters</param>
+    </member>
+    <member name="M:CM3D2.Toolkit.Logging.NullLogger.Error(System.String,System.Object[])">
+      <summary>
+                Error-Level Log Message
+            </summary>
+      <param name="message">Message</param>
+      <param name="args">Parameters</param>
+    </member>
+    <member name="M:CM3D2.Toolkit.Logging.NullLogger.Fatal(System.String,System.Object[])">
+      <summary>
+                Fatal-Level Log Message
+            </summary>
+      <param name="message">Message</param>
+      <param name="args">Parameters</param>
+    </member>
+    <member name="M:CM3D2.Toolkit.Logging.NullLogger.Info(System.String,System.Object[])">
+      <summary>
+                Info-Level Log Message
+            </summary>
+      <param name="message">Message</param>
+      <param name="args">Parameters</param>
+    </member>
+    <member name="F:CM3D2.Toolkit.Logging.NullLogger.Instance">
+      <summary>
+                Null Logger Instance
+            </summary>
+    </member>
+    <member name="P:CM3D2.Toolkit.Logging.NullLogger.Name">
+      <summary>
+        <markup>
+          <include item="SMCMissingTag">
+            <parameter>summary</parameter>
+            <parameter>P:CM3D2.Toolkit.Logging.NullLogger.Name</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:CM3D2.Toolkit.Logging.NullLogger.Trace(System.String,System.Object[])">
+      <summary>
+                Trace-Level Log Message
+            </summary>
+      <param name="message">Message</param>
+      <param name="args">Parameters</param>
+    </member>
+    <member name="M:CM3D2.Toolkit.Logging.NullLogger.Warn(System.String,System.Object[])">
+      <summary>
+                Warn-Level Log Message
+            </summary>
+      <param name="message">Message</param>
+      <param name="args">Parameters</param>
+    </member>
+  </members>
+</doc>
